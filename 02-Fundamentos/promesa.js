@@ -57,7 +57,7 @@ const getSalario = (id) => {
 }
 
 
-const id = 3;
+const id = 6;
 /* getInfor(id)
     .then(empleadi => console.log(empleadi))
     .catch(err => console.log(err))
