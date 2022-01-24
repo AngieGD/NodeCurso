@@ -1,3 +1,4 @@
+/*
 const empleados =  [
     {
         id: 1,
@@ -76,3 +77,4 @@ getInfoUsuario(id)
     .catch(err => console.log(err));
     
 
+*/

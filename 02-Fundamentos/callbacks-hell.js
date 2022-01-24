@@ -31,8 +31,28 @@ const salario =  [
 
 ]
 
+
+const getEmpleado = (id , callback) => {
+    const empleado = empleados.find((e) => e.id === id)?.nombre //Se pone el signo de ? para que en caso de que no encuentre algo no salga error
+    if(empleado){
+        callback(null , empleado);
+    }else{
+        callback(`El usuario con id ${id} no existe`)     
+    }
+}
+
+getEmpleado(10 , (err , empleado) => {
+
+    if(err){
+        console.log('ERROR!!')
+        return console.log(err)
+    }
+    console.log('Empleado existe')
+    console.log(empleado);      
+})
+
 const getInfor = ( id  , callback )=>{
-    const empleado = empleados.find((e) => e.id === id)
+    const empleado = empleados.find((e) => e.id === id)?.nombre
 
     
     if(empleado ){
@@ -48,23 +68,23 @@ const getSalario = (id , call) => {
     const elsalario = salario.find((e) => e.id === id)?.salario
     //console.log(elsalario)
     if (elsalario){
-        call(null , elsalario  )
+        call(null , elsalario)
     } else {
         call('El empleado no tiene salario')
     }
 }
-
-getInfor(3 , (err , empleado) => { //err , empleado son los parametros de mi callback, 
+const id = 3
+getInfor(id , (err , empleado) => { //err , empleado son los parametros de mi callback, 
     if(err) {
         console.log('ERROR')
         return console.log(err)
     }
 
-    getSalario(1 , (err , sal) => {
+    getSalario(id , (err , sal) => {
         if(err){
             return console.log(err)
         }
-        console.log(sal)
+        console.log( `${sal} del empleado ${empleado} `)
     })    
     
 })

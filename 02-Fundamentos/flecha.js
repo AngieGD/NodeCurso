@@ -12,4 +12,7 @@ const sumarf = (a , b) => {
 }
 
 //Version corta 
-const sumarc = (a,b)  => a , b;
+const sumarc = (a,b)  => a + b;
+
+const saluda = () => 'Hola Angie';
+console.log(sumarc(2,5))

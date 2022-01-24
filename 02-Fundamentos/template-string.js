@@ -1,9 +1,9 @@
-const nombre = 'Wade';
+const nombres = 'Wade';
 const real = 'Deadpool';
 
-const normal = nombre + ' ' + real;
+const normal = nombres + ' ' + real;
 //Template
-const template = `${ nombre } ${ real }`;
+const template = `${ nombres } ${ real }`;
 
 console.log(normal);
 console.log(template);

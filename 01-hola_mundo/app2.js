@@ -1,7 +1,7 @@
-const saludar = (nombre) => {
-    return `Saludos ${nombre}`;  //'Saludos' + nombre;
+const saludar = (nombre , padre) => {
+    return `Saludos ${nombre} hija de ${padre}`;  //'Saludos' + nombre;
 
 }
 
-console.log(saludar('Angie'));
+console.log(saludar('Andrea' , 'Leo'));
 

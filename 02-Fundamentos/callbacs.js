@@ -15,12 +15,12 @@ const getUsuarioByID = (id , callback) => {
     } , 1000)
 
 }
-/*
+
 
 getUsuarioByID(15 , (usu) => {
     console.log(usu);
 });
-*/
+
 /*
 const list = [1 , 5 , 2]
 
@@ -55,11 +55,11 @@ prod.forEach((ele , i , j ) => {
 
 
 
-const sumar = (a , b , callb) => {
-    return callb(a+b)
+const suma = (a , b , callb) => {
+    return callb(a+b);
 }
 
-sumar(1 , 2 , (d) => {
+suma(1 , 2 , (d) => {
     console.log("La suma es" , d)
 });
 
@@ -68,7 +68,7 @@ let mostrarmensaje = () => {
 };
 
 //Se ejecuta muchas veces
-setInterval(mostrarmensaje , 3000);
+setInterval(mostrarmensaje , 1000);
  
 
 
