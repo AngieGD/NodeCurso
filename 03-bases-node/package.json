@@ -1,6 +1,6 @@
 {
   "name": "03-bases-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Es una simple tabla de multiplicar",
   "main": "app.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "yargs": "^17.2.0"
+    "yargs": "^17.3.1"
   },
   "devDependencies": {}
 }
