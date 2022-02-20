@@ -1,8 +1,12 @@
+require('dotenv').config();
+
 const express = require('express')
 const hbs = require('hbs')
-
 const app = express()
 
+//const port = 8080
+const port = process.env.PORT;
+              
 
 //Con esto ya vamos a renderizar 
 app.set('view engine', 'hbs'); 
@@ -44,7 +48,9 @@ app.get('*' , (req,res)=> {
   res.send('404| page not found')
 });
 
-app.listen(3000)
+app.listen(port , ()=>{
+  console.log(`Example app listening at http://localhost:${port}`)
+})
 
 //Hola
 
