@@ -1,49 +1,48 @@
 
 const {response , request} = require('express')
-
-let namepost = '';
-let idpost = 0;
-let langpost = '';
-let saludo = '';
+const Usuario = require('../models/usuario')
+const bcryptjs = require('bcryptjs')
 
 const usuarioGet = (req , res = response) => {
 
-    switch(langpost) {
-        case 'ES':
-            saludo = "Hola";
-            break;
-        case 'EN':
-            saludo = "Hello"
-            break;
-        case 'FR':
-            saludo = "Salut"
-            break;
-        default:
-            saludo = "Holi"
+    // switch(langpost) {
+    //     case 'ES':
+    //         saludo = "Hola";
+    //         break;
+    //     case 'EN':
+    //         saludo = "Hello"
+    //         break;
+    //     case 'FR':
+    //         saludo = "Salut"
+    //         break;
+    //     default:
+    //         saludo = "Holi"
 
             
-    }
+    // }
     res.status(200).json({  
-        id: idpost,
-        content: saludo + " "+ namepost+"!"
+     
     });
     
 }
 
 
 
-const usuarioPost =  (req=request , res=response) => {
+const usuarioPost = async (req=request , res=response) => {
     
-    const {id , name , lang} = req.query;
-    namepost = name;
-    idpost = id;
-    langpost = lang;
-     res.status(202).json({
-         name,
-         lang,
-         id
-         
-     });   
+    const {name, correo, password, rol } = req.body
+    const usuario = new Usuario({name, correo, password, rol});
+    
+    // Verificar correo
+
+    //Emcriptar constraseña
+    const salt = bcryptjs.getSalt()
+
+    //Guardar en BD
+    await usuario.save();
+    res.status(202).json({
+       usuario
+    });   
 }
 
 

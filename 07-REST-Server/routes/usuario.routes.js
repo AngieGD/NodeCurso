@@ -7,11 +7,11 @@ const { usuarioGet,
           } = require('../controllers/usuario.controllers');
 
 
-router.get('/greeting', usuarioGet);
+router.get('/', usuarioGet);
 
      
 
-router.post('/register',usuarioPost);     
+router.post('/',usuarioPost);     
 
              
 
